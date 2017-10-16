@@ -42,17 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category\HumanFemale.cs" />
-    <Compile Include="Category\HumanMale.cs" />
-    <Compile Include="Female\FemaleAdult.cs" />
-    <Compile Include="Female\FemaleChild.cs" />
-    <Compile Include="Female\FemaleElder.cs" />
-    <Compile Include="Female\FemaleTeenager.cs" />
+    <Compile Include="Category\Adult.cs" />
+    <Compile Include="Category\Child.cs" />
+    <Compile Include="Category\Elder.cs" />
+    <Compile Include="Category\Teenager.cs" />
     <Compile Include="Human.cs" />
-    <Compile Include="Male\MaleAdult.cs" />
-    <Compile Include="Male\MaleChild.cs" />
-    <Compile Include="Male\MaleElder.cs" />
-    <Compile Include="Male\MaleTeenager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

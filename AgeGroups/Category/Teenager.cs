@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AgeGroups.Category;
 
-namespace AgeGroups.Female
+namespace AgeGroups.Category
 {
-    class FemaleAdult : HumanFemale
+    class Teenager : Human
     {
         public override void Show()
         {

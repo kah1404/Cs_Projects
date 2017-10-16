@@ -1,6 +1,5 @@
 ﻿using System;
-using AgeGroups.Female;
-using AgeGroups.Male;
+using AgeGroups.Category;
 
 namespace AgeGroups
 {
@@ -8,7 +7,7 @@ namespace AgeGroups
     {
         static void Main(string[] args)
         {
-            var femaleChild = new FemaleChild
+            var femaleChild = new Child
             {
                 Category = "Female Child",
                 Sex = "Female",
@@ -17,7 +16,7 @@ namespace AgeGroups
             };
             femaleChild.Show();
 
-            var femaleTeenager = new FemaleTeenager
+            var femaleTeenager = new Teenager
             {
                 Category = "Female teenager",
                 Sex = "Female",
@@ -26,7 +25,7 @@ namespace AgeGroups
             };
             femaleTeenager.Show();
 
-            var femaleAdult = new FemaleAdult
+            var femaleAdult = new Adult
             {
                 Category = "Female adult",
                 Sex = "Female",
@@ -35,7 +34,7 @@ namespace AgeGroups
             };
             femaleAdult.Show();
 
-            var femaleElder = new FemaleElder
+            var femaleElder = new Elder
             {
                 Category = "Female elder",
                 Sex = "Female",
@@ -44,7 +43,7 @@ namespace AgeGroups
             };
             femaleElder.Show();
 
-            var maleChild = new MaleChild
+            var maleChild = new Child
             {
                 Category = "Female Child",
                 Sex = "Male",
@@ -53,7 +52,7 @@ namespace AgeGroups
             };
             maleChild.Show();
 
-            var maleTeenager = new MaleTeenager
+            var maleTeenager = new Teenager
             {
                 Category = "Female teenager",
                 Sex = "Male",
@@ -62,7 +61,7 @@ namespace AgeGroups
             };
             maleTeenager.Show();
 
-            var maleAdult = new MaleAdult
+            var maleAdult = new Adult
             {
                 Category = "Female adult",
                 Sex = "Male",
@@ -71,7 +70,7 @@ namespace AgeGroups
             };
             maleAdult.Show();
 
-            var maleElder = new MaleElder
+            var maleElder = new Elder
             {
                 Category = "Female elder",
                 Sex = "Male",

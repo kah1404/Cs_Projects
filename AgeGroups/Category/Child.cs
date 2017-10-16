@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AgeGroups.Category
 {
-    class HumanMale : Human
+    class Child : Human
     {
         public override void Show()
         {
             base.Show();
-
+            Console.WriteLine();
         }
     }
 }
