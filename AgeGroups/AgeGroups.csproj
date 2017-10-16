@@ -42,16 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adult.cs" />
-    <Compile Include="Child.cs" />
-    <Compile Include="Elder.cs" />
+    <Compile Include="Category\HumanFemale.cs" />
+    <Compile Include="Category\HumanMale.cs" />
+    <Compile Include="Female\FemaleAdult.cs" />
+    <Compile Include="Female\FemaleChild.cs" />
+    <Compile Include="Female\FemaleElder.cs" />
+    <Compile Include="Female\FemaleTeenager.cs" />
     <Compile Include="Human.cs" />
+    <Compile Include="Male\MaleAdult.cs" />
+    <Compile Include="Male\MaleChild.cs" />
+    <Compile Include="Male\MaleElder.cs" />
+    <Compile Include="Male\MaleTeenager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Teenager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

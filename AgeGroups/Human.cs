@@ -10,8 +10,17 @@ namespace AgeGroups
     {
         public int LowestPossibleAge { get; set; }
         public int HighestPossibleAge { get; set; }
-        public string Name { get; set; }
-        public string IsFemale = "Female";
-        public string IsMale = "Male";
+        public string Category { get; set; }
+        public string Sex { get; set; }
+
+        public virtual void Show()
+        {
+            Console.WriteLine("Category: " + Category);
+            Console.WriteLine("Sex: " + Sex);
+            Console.WriteLine("Lowest possible age: " + LowestPossibleAge);
+            Console.WriteLine("Hihest possible age: " + HighestPossibleAge);
+        }
+
+
     }
 }
