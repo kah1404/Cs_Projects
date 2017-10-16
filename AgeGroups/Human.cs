@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgeGroups
 {
-    public class Human
+    public abstract class Human
     {
         public int LowestPossibleAge { get; set; }
         public int HighestPossibleAge { get; set; }
