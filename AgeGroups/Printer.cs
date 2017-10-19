@@ -1,25 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AgeGroups
 {
-    abstract class Printer
+    class Printer
     {
-        public List<string> Output = new List<string>();
+        private List<string> _output = new List<string>();
 
-        public virtual void Print()
+        public void Print()
         {
-            
+            PrintToConsole();
+            PrintToFile();
         }
 
+        public void PrintToConsole()
+        {
+            foreach (var element in _output)
+            {
+                Console.WriteLine(element + "\n");
+            }
+        }
+
+        public void PrintToFile()
+        {
+            var path = @"C:\Users\kevin\Source\Repos\Cs_Projects\AgeGroups\PrinterFile.cs";
+            File.WriteAllText(path, "");
+            foreach (var element in _output)
+            {
+                File.AppendAllText(path, element + "\n");
+            }
+        }
 
         public void AddElement(string element)
         {
-            Output.Add(element);
+            _output.Add(element);
         }
-
     }
 }

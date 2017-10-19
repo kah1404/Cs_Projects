@@ -1,24 +1,27 @@
 ﻿//using System;
 //using System.Collections.Generic;
+//using System.IO;
 //using System.Linq;
 //using System.Text;
 //using System.Threading.Tasks;
 //
 //namespace AgeGroups
 //{
-//    class PrinterConsole 
+//    class PrinterFile : Printer
 //    {
 //        public override void Print()
 //        {
 //            base.Print();
-//            PrintToConsole();
+//            PrintToFile();
 //        }
 //
-//        public void PrintToConsole()
+//        public void PrintToFile()
 //        {
+//            var path = @"C:\Users\kevin\Source\Repos\Cs_Projects\AgeGroups\PrinterFile.cs";
+//            File.WriteAllText(path, "");
 //            foreach (var element in Output)
 //            {
-//                Console.WriteLine(element + "\n");
+//                File.AppendAllText(path, element + "\n");
 //            }
 //        }
 //    }

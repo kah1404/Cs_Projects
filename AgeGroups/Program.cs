@@ -3,11 +3,11 @@ using AgeGroups.Category;
 
 namespace AgeGroups
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            PrinterConsole printerConsole = new PrinterConsole();
+            var printer = new Printer();
             var femaleChild = new Child
             {
                 Category = "Child",
@@ -15,7 +15,8 @@ namespace AgeGroups
                 LowestPossibleAge = 0,
                 HighestPossibleAge = 12
             };
-            printerConsole.AddElement(femaleChild.Show());
+            printer.AddElement(femaleChild.Show());
+            printer.AddElement(femaleChild.Show());
 
             var femaleTeenager = new Teenager
             {
@@ -24,7 +25,7 @@ namespace AgeGroups
                 LowestPossibleAge = 13,
                 HighestPossibleAge = 19
             };
-            femaleTeenager.Show();
+            printer.AddElement(femaleTeenager.Show());
 
             var femaleAdult = new Adult
             {
@@ -33,7 +34,7 @@ namespace AgeGroups
                 LowestPossibleAge = 20,
                 HighestPossibleAge = 64
             };
-            femaleAdult.Show();
+            printer.AddElement(femaleAdult.Show());
 
             var femaleElder = new Elder
             {
@@ -42,7 +43,7 @@ namespace AgeGroups
                 LowestPossibleAge = 65,
                 HighestPossibleAge = 110
             };
-            femaleElder.Show();
+            printer.AddElement(femaleElder.Show());
 
             var maleChild = new Child
             {
@@ -51,7 +52,7 @@ namespace AgeGroups
                 LowestPossibleAge = 0,
                 HighestPossibleAge = 12
             };
-            maleChild.Show();
+            printer.AddElement(maleChild.Show());
 
             var maleTeenager = new Teenager
             {
@@ -60,7 +61,7 @@ namespace AgeGroups
                 LowestPossibleAge = 13,
                 HighestPossibleAge = 19
             };
-            maleTeenager.Show();
+            printer.AddElement(maleTeenager.Show());
 
             var maleAdult = new Adult
             {
@@ -69,7 +70,7 @@ namespace AgeGroups
                 LowestPossibleAge = 20,
                 HighestPossibleAge = 64
             };
-            maleAdult.Show();
+            printer.AddElement(maleAdult.Show());
 
             var maleElder = new Elder
             {
@@ -78,12 +79,12 @@ namespace AgeGroups
                 LowestPossibleAge = 65,
                 HighestPossibleAge = 110
             };
-            maleElder.Show();
-            SplitLines();
-            UserInputSex(femaleChild, maleChild);
-            SplitLines();
-            UserInputAge(maleChild, maleTeenager, maleAdult, maleElder);
-            SplitLines();
+            printer.AddElement(maleElder.Show());
+//            SplitLines();
+//            UserInputSex(femaleChild, maleChild);
+//            SplitLines();
+//            UserInputAge(maleChild, maleTeenager, maleAdult, maleElder);
+//            SplitLines();
         }
 
         private static void UserInputSex(Child femaleChild, Child maleChild)

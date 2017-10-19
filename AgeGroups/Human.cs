@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace AgeGroups
 {
-    public abstract class Human
+    internal abstract class Human
     {
         public int LowestPossibleAge { get; set; }
         public int HighestPossibleAge { get; set; }
         public string Category { get; set; }
         public string Sex { get; set; }
 
-        public virtual string Show()
+        public string Show()
         {
             return $"Category: {Category}" +
-                   $"Sex: {Sex}" +
-                   $"Lowest possible age: {LowestPossibleAge}" +
-                   $"Highest possible age: {HighestPossibleAge}";
+                   $"\nSex: {Sex}" +
+                   $"\nLowest possible age: {LowestPossibleAge}" +
+                   $"\nHighest possible age: {HighestPossibleAge}";
         }
+ 
 
 
     }
