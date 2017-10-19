@@ -13,15 +13,7 @@ namespace AgeGroups
         public string Category { get; set; }
         public string Sex { get; set; }
 
-        public string Show()
-        {
-            return $"Category: {Category}" +
-                   $"\nSex: {Sex}" +
-                   $"\nLowest possible age: {LowestPossibleAge}" +
-                   $"\nHighest possible age: {HighestPossibleAge}";
-        }
- 
-
+        public abstract string Show();
 
     }
 }

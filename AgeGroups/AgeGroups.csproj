@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddElements.cs" />
+    <Compile Include="AddElementToPrinter.cs" />
     <Compile Include="Category\Adult.cs" />
     <Compile Include="Category\Child.cs" />
     <Compile Include="Category\Elder.cs" />
@@ -58,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Output.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

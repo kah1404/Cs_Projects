@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace AgeGroups.Category
 {
-    class Child : Human
+   internal class Child : Human
     {
-
+        public override string Show()
+        {
+            return $"Category: {Category}" +
+                   $"\nSex: {Sex}" +
+                   $"\nLowest possible age: {LowestPossibleAge}" +
+                   $"\nHighest possible age: {HighestPossibleAge}";
+        }
     }
 }

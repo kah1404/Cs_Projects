@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AgeGroups
 {
-    abstract class Printer : AddElementToPrinter
+    interface AddElements
     {
-        public abstract void Print();
+        void AddElement(string element);
     }
 }
