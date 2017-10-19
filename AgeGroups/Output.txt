@@ -1,0 +1,32 @@
+Category: Child
+Sex: Female
+Lowest possible age: 0
+Highest possible age: 12
+Category: Teenager
+Sex: Female
+Lowest possible age: 13
+Highest possible age: 19
+Category: Adult
+Sex: Female
+Lowest possible age: 20
+Highest possible age: 64
+Category: Elder
+Sex: Female
+Lowest possible age: 65
+Highest possible age: 110
+Category: Child
+Sex: Male
+Lowest possible age: 0
+Highest possible age: 12
+Category: Teenager
+Sex: Male
+Lowest possible age: 13
+Highest possible age: 19
+Category: Adult
+Sex: Male
+Lowest possible age: 20
+Highest possible age: 64
+Category: Elder
+Sex: Male
+Lowest possible age: 65
+Highest possible age: 110
