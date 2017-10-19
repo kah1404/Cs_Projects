@@ -8,7 +8,7 @@ namespace AgeGroups
 {
     class PrinterConsole : Printer
     {
-        public override void Print()
+        internal override void Print()
         {
             PrintToConsole();
         }

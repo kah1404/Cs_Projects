@@ -8,12 +8,6 @@ namespace AgeGroups.Category
 {
    internal class Adult : Human
     {
-        public override string Show()
-        {
-            return $"Category: {Category}" +
-                   $"\nSex: {Sex}" +
-                   $"\nLowest possible age: {LowestPossibleAge}" +
-                   $"\nHighest possible age: {HighestPossibleAge}";
-        }
+
     }
 }

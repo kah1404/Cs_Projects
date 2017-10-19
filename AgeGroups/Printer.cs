@@ -9,6 +9,6 @@ namespace AgeGroups
 {
     abstract class Printer : AddElementToPrinter
     {
-        public abstract void Print();
+        internal abstract void Print();
     }
 }
