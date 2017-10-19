@@ -8,10 +8,6 @@ namespace AgeGroups.Category
 {
     class Elder : Human
     {
-        public override void Show()
-        {
-            base.Show();
-            Console.WriteLine();
-        }
+
     }
 }

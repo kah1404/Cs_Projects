@@ -46,8 +46,9 @@
     <Compile Include="Category\Child.cs" />
     <Compile Include="Category\Elder.cs" />
     <Compile Include="Category\Teenager.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Human.cs" />
+    <Compile Include="Printer.cs" />
+    <Compile Include="PrinterConsole.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -13,12 +13,12 @@ namespace AgeGroups
         public string Category { get; set; }
         public string Sex { get; set; }
 
-        public virtual void Show()
+        public virtual string Show()
         {
-            Console.WriteLine("Category: " + Category);
-            Console.WriteLine("Sex: " + Sex);
-            Console.WriteLine("Lowest possible age: " + LowestPossibleAge);
-            Console.WriteLine("Hihest possible age: " + HighestPossibleAge);
+            return $"Category: {Category}" +
+                   $"Sex: {Sex}" +
+                   $"Lowest possible age: {LowestPossibleAge}" +
+                   $"Highest possible age: {HighestPossibleAge}";
         }
 
 

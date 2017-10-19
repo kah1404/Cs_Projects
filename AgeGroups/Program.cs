@@ -7,6 +7,7 @@ namespace AgeGroups
     {
         static void Main(string[] args)
         {
+            PrinterConsole printerConsole = new PrinterConsole();
             var femaleChild = new Child
             {
                 Category = "Child",
@@ -14,7 +15,7 @@ namespace AgeGroups
                 LowestPossibleAge = 0,
                 HighestPossibleAge = 12
             };
-            femaleChild.Show();
+            printerConsole.AddElement(femaleChild.Show());
 
             var femaleTeenager = new Teenager
             {
@@ -90,7 +91,7 @@ namespace AgeGroups
             Console.WriteLine("Are you a male or female?");
             while (true)
             {
-                string userInputSex = Console.ReadLine()?.ToLower();
+                var userInputSex = Console.ReadLine()?.ToLower();
                 if (userInputSex == "female")
                 {
                     Console.WriteLine("you are a " + femaleChild.Sex);
@@ -121,8 +122,7 @@ namespace AgeGroups
             while (true)
             {
                 string userInputAge = Console.ReadLine();
-                int number;
-                bool result = Int32.TryParse(userInputAge, out number);
+                bool result = Int32.TryParse(userInputAge, out var number);
                 if (result)
                 {
                     if (number >= 0 && number < 13)
