@@ -14,7 +14,7 @@ namespace AgeGroups
             var path = @"C:\Users\kevin\Source\Repos\Cs_Projects\AgeGroups\Output.txt";
 
             //File.WriteAllText(path, "\n");
-            foreach (var element in _output)
+            foreach (var element in Output)
             {
                 File.AppendAllText(path, element + "\n");
             }

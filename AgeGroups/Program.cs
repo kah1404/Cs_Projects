@@ -16,6 +16,7 @@ namespace AgeGroups
                 Sex = "Female",
                 LowestPossibleAge = 0,
                 HighestPossibleAge = 12
+                
             };
             printToConsole.AddElement(femaleChild.Show());
             printToFile.AddElement(femaleChild.Show());

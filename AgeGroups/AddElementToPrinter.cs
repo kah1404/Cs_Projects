@@ -8,10 +8,10 @@ namespace AgeGroups
 {
     class AddElementToPrinter : AddElements
     {
-        internal List<string> _output = new List<string>();
+        internal List<string> Output = new List<string>();
         public void AddElement(string element)
         {
-            _output.Add(element);
+            Output.Add(element);
         }
     }
 }

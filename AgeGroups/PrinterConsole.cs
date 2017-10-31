@@ -15,7 +15,7 @@ namespace AgeGroups
 
         public void PrintToConsole()
         {
-            foreach (var element in _output)
+            foreach (var element in Output)
             {
                 Console.WriteLine(element + "\n");
             }
