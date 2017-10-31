@@ -1,33 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestingGenerics
 {
     class Program
     {
         private static int _numberIndex;
-        private static int _numberValue;
+        private static string _numberValue;
 
         private static void Main(string[] args)
         {
-            var testing = new TestGenerics<int>();
-            
+            var testing = new TestGenerics<string>();
+
             try
             {
                 UserInput(testing);
             }
-            catch (Exception)
+            catch (OutOfMemoryException e1)
             {
-
-                UserInput(testing);
+                Console.WriteLine("OutOfMemoryExeption! :( {0}", e1);
+            }
+            catch (Exception e2)
+            {
+                Console.WriteLine(e2);
+            }
+            finally
+            {
+                Console.WriteLine("Bye");
             }
         }
 
 
-        private static void UserInput(TestGenerics<int> testing)
+        private static void UserInput(TestGenerics<string> testing)
         {
             while (true)
             {
@@ -51,10 +54,14 @@ namespace TestingGenerics
 
         private static void NumberValue()
         {
-            do
-            {
-                Console.WriteLine("Pick a number (value)");
-            } while (!int.TryParse(Console.ReadLine(), out _numberValue));
+//            do
+//            {
+//                Console.WriteLine("Pick a number (value)");
+//
+//            } while (!int.TryParse(Console.ReadLine(), out _numberValue));
+
+            Console.WriteLine("Pick a number (value)");
+            _numberValue = Console.ReadLine();
             Console.WriteLine("You entered {0}", _numberValue + "\n");
         }
 
@@ -67,7 +74,7 @@ namespace TestingGenerics
             Console.WriteLine("You entered {0}", _numberIndex + "\n");
         }
 
-        private static void AddUnderscore(TestGenerics<int> testing)
+        private static void AddUnderscore(TestGenerics<string> testing)
         {
             for (var i = 0; i < testing.Length; i++) Console.Write(testing.Get(i) + ",");
             Console.WriteLine();
