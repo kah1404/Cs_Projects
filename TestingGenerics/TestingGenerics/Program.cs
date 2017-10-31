@@ -8,27 +8,20 @@ namespace TestingGenerics
 {
     class Program
     {
-
         private static int _numberIndex;
         private static int _numberValue;
 
         private static void Main(string[] args)
         {
             var testing = new TestGenerics<int>();
-            testing.Add(0, 1);
-            testing.Add(1, 2);
-            testing.Add(2, 3);
-            testing.Add(39, 1);
-
-            AddUnderscore(testing);
-
+            
             try
             {
                 UserInput(testing);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e);
+
                 UserInput(testing);
             }
         }
@@ -81,5 +74,3 @@ namespace TestingGenerics
         }
     }
 }
-
-
