@@ -1,5 +1,3 @@
-using System;
-
 namespace DatabaseOgEntityFramework.Models
 {
     public class ErrorViewModel
