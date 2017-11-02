@@ -35,7 +35,7 @@ namespace DatabaseOgEntityFramework
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Index/Error");
             }
 
             app.UseStaticFiles();
@@ -44,7 +44,7 @@ namespace DatabaseOgEntityFramework
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Index}/{action=Index}/{id?}");
             });
         }
     }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DatabaseOgEntityFramework.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace DatabaseOgEntityFramework.Controllers
 {
@@ -62,6 +63,7 @@ namespace DatabaseOgEntityFramework.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(blog);
+
         }
 
         // GET: Blogs/Edit/5
