@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TestSQLDatabase.Models;
+using MovieListDatabase.Models;
 
-namespace TestSQLDatabase.Controllers
+namespace MovieListDatabase.Controllers
 {
-    public class MovieListController : Controller
+    public class MovieListsController : Controller
     {
         private readonly TestContext _context;
 
-        public MovieListController(TestContext context)
+        public MovieListsController(TestContext context)
         {
             _context = context;
         }

@@ -1,39 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using TestSQLDatabase.Models;
+using MovieListDatabase.Models;
 
-namespace TestSQLDatabase.Controllers
+namespace MovieListDatabase.Controllers
 {
     public class MovieListController : Controller
     {
-        private readonly TestContext _context;
-
-        public MovieListController(TestContext context)
-        {
-            _context = context;
-        }
-
-        // GET: MovieLists
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.MovieList.ToListAsync());
-        }
-
-        // GET: MovieLists/Details/5
+        private TestContext db = new TestContext();
+            public async Task<IActionResult> Index()
+            {
+                return View(await db.MovieList.ToListAsync());
+            }
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            var movieList = await _context.MovieList
-                .SingleOrDefaultAsync(m => m.Id == id);
+            MovieList movieList = await db.MovieList.FindAsync(id);
             if (movieList == null)
             {
                 return NotFound();
@@ -42,37 +31,31 @@ namespace TestSQLDatabase.Controllers
             return View(movieList);
         }
 
-        // GET: MovieLists/Create
+
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: MovieLists/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Create([Bind("Id,MovieName,Genre,Rating,ReleaseYear,ImdbLink")] MovieList movieList)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movieList);
-                await _context.SaveChangesAsync();
+                db.Add(movieList);
+                await db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(movieList);
         }
 
-        // GET: MovieLists/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            var movieList = await _context.MovieList.SingleOrDefaultAsync(m => m.Id == id);
+            var movieList = await db.MovieList.SingleOrDefaultAsync(m => m.Id == id);
             if (movieList == null)
             {
                 return NotFound();
@@ -80,11 +63,6 @@ namespace TestSQLDatabase.Controllers
             return View(movieList);
         }
 
-        // POST: MovieLists/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,MovieName,Genre,Rating,ReleaseYear,ImdbLink")] MovieList movieList)
         {
             if (id != movieList.Id)
@@ -96,8 +74,8 @@ namespace TestSQLDatabase.Controllers
             {
                 try
                 {
-                    _context.Update(movieList);
-                    await _context.SaveChangesAsync();
+                    db.Update(movieList);
+                    await db.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -115,7 +93,6 @@ namespace TestSQLDatabase.Controllers
             return View(movieList);
         }
 
-        // GET: MovieLists/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,7 +100,7 @@ namespace TestSQLDatabase.Controllers
                 return NotFound();
             }
 
-            var movieList = await _context.MovieList
+            var movieList = await db.MovieList
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (movieList == null)
             {
@@ -133,20 +110,18 @@ namespace TestSQLDatabase.Controllers
             return View(movieList);
         }
 
-        // POST: MovieLists/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movieList = await _context.MovieList.SingleOrDefaultAsync(m => m.Id == id);
-            _context.MovieList.Remove(movieList);
-            await _context.SaveChangesAsync();
+            var movieList = await db.MovieList.SingleOrDefaultAsync(m => m.Id == id);
+            db.MovieList.Remove(movieList);
+            await db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MovieListExists(int id)
         {
-            return _context.MovieList.Any(e => e.Id == id);
+            return db.MovieList.Any(e => e.Id == id);
         }
+
     }
 }
