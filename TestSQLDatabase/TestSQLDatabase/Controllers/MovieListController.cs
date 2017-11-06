@@ -8,7 +8,7 @@ using TestSQLDatabase.Models;
 
 namespace TestSQLDatabase.Controllers
 {
-    public class HomeController : Controller
+    public class MovieListController : Controller
     {
         public IActionResult Index()
         {
@@ -17,19 +17,6 @@ namespace TestSQLDatabase.Controllers
             return View(db.MovieList.ToList());
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
 
         public IActionResult Error()
         {
