@@ -105,6 +105,7 @@ namespace TestGenerics
             list.AddLast("world");
             list.RemoveLast();
 
+
             Assert.AreEqual(list.First, list.Last);
         }
         [TestMethod]
@@ -116,6 +117,15 @@ namespace TestGenerics
             list.RemoveFirst();
 
             Assert.AreEqual(list.First, list.Last);
+        }
+        [TestMethod]
+        public void LinkedListFindItem()
+        {
+            var list = new LinkedList<string>();
+            list.AddFirst("Hello");
+            list.AddLast("world");
+
+            Assert.IsTrue(list.Contains("Hello"));
         }
     }
 }

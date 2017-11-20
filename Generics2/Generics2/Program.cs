@@ -10,12 +10,51 @@ namespace Generics2
     {
         static void Main(string[] args)
         {
-            TestGenerics6();
+            TestGenerics7();
+            //TestGenerics6();
             //TestGenerics5();
             //TestGenerics4();
             //TestGenerics3();
             //TestGenerics2();
             //TestGenerics1();
+        }
+
+        private static void TestGenerics7()
+        {
+            var employeesByName1 = new Dictionary<string, List<Employee>>
+            {
+                { "Kevin", new List<Employee>{new Employee{Name = "Kevin"}}},
+                { "Scott", new List<Employee>{new Employee{Name = "Scott" } }},
+                { "Truls", new List<Employee>{new Employee{Name = "Truls" } }},
+            };
+
+            employeesByName1["Kevin"].Add(new Employee { Name = "Kevin" });
+
+            foreach (var item in employeesByName1)
+            {
+                foreach (var employee in item.Value)
+                {
+                    Console.WriteLine($"{item.Key}:{employee.Name}");
+                }
+            }
+
+           
+
+            Console.WriteLine("-------");
+
+            var employeesByName = new Dictionary<string, Employee>
+            {
+                {"Kevin", new Employee {Name = "Kevin"}},
+                {"Scott", new Employee {Name = "Scott"}},
+                {"Truls", new Employee {Name = "Truls"}},
+
+            };
+
+            foreach (var item in employeesByName)
+            {
+                Console.WriteLine($"{item.Key}:{item.Value.Name}");
+            }
+
         }
 
         private static void TestGenerics6()
