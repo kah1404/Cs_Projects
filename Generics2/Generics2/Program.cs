@@ -10,14 +10,14 @@ namespace Generics2
     {
         static void Main(string[] args)
         {
-            TestGenerics8();
-            //TestGenerics7();
-            //TestGenerics6();
-            //TestGenerics5();
-            //TestGenerics4();
-            //TestGenerics3();
-            //TestGenerics2();
-            //TestGenerics1();
+//            TestGenerics8();
+//            TestGenerics7();
+//            TestGenerics6();
+//            TestGenerics5();
+//            TestGenerics4();
+//            TestGenerics3();
+//            TestGenerics2();
+//            TestGenerics1();
         }
 
         private static void TestGenerics8()
