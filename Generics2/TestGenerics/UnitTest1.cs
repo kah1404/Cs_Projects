@@ -127,5 +127,17 @@ namespace TestGenerics
 
             Assert.IsTrue(list.Contains("Hello"));
         }
+        [TestMethod]
+        public void DictionaryTest()
+        {
+            var map = new Dictionary<int, string>
+            {
+                {1, "One"} ,
+                {2, "Two"}
+            };
+
+            Assert.AreEqual("One", map[1]);
+            Assert.IsTrue(map.ContainsKey(1));
+        }
     }
 }

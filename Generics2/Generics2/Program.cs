@@ -10,7 +10,8 @@ namespace Generics2
     {
         static void Main(string[] args)
         {
-            TestGenerics7();
+            TestGenerics8();
+            //TestGenerics7();
             //TestGenerics6();
             //TestGenerics5();
             //TestGenerics4();
@@ -19,33 +20,52 @@ namespace Generics2
             //TestGenerics1();
         }
 
-        private static void TestGenerics7()
+        private static void TestGenerics8()
         {
-            var employeesByName1 = new Dictionary<int, List<Employee>>
+            var employeesByName = new SortedDictionary<int, List<Employee>>
             {
-                { 1, new List<Employee>{new Employee{Name = "Kevin", Wage = 250.61f}}},
-                { 2, new List<Employee>{new Employee{Name = "Scott", Wage = 225}}},
-                { 3, new List<Employee>{new Employee{Name = "Truls", Wage = 400}}}
+                {2, new List<Employee>{ new Employee(), new Employee(), new Employee()}},
+                {3, new List<Employee>{ new Employee(), new Employee(), new Employee()}},
+                {5, new List<Employee>{ new Employee(), new Employee(), new Employee()}},
+                {4, new List<Employee>{ new Employee(), new Employee(), new Employee()}},
+                {1, new List<Employee>{ new Employee(), new Employee()}}
             };
 
-            employeesByName1[1].Add(new Employee{ Name = "Kevin", Wage = 320});
-            employeesByName1[2].Add(new Employee{ Name = "Scott", Wage = 330});
-
-            var countKeys = employeesByName1.Keys.Count;
-            Console.WriteLine(countKeys);
-
-            var countValues = employeesByName1.Values.Count;
-            Console.WriteLine(countValues);
-
-            var count = employeesByName1.Count;
-            Console.WriteLine(count);
+            foreach (var item in employeesByName)
+            {
+                Console.WriteLine($"The count of employees for {item.Key} is {item.Value.Count}");
+            }
 
 
-            foreach (var item in employeesByName1)
+        }
+
+        private static void TestGenerics7()
+        {
+            var employeesByDepartment = new Dictionary<string, List<Employee>>
+            {
+                { "R&C", new List<Employee>{new Employee{Name = "Kevin", Wage = 0}}},
+                { "Instructors", new List<Employee>{new Employee{Name = "Scott", Wage = 300}}},
+                { "LostAndFound", new List<Employee>{new Employee{Name = "Truls", Wage = 1}}}
+            };
+
+            employeesByDepartment["R&C"].Add(new Employee{ Name = "Andreas", Wage = 0});
+            employeesByDepartment["Instructors"].Add(new Employee{ Name = "Terje", Wage = 260});
+
+//            var countKeys = employeesByDepartment.Keys.Count;
+//            Console.WriteLine(countKeys);
+//
+//            var countValues = employeesByDepartment.Values.Count;
+//            Console.WriteLine(countValues);
+//
+//            var count = employeesByDepartment.Count;
+//            Console.WriteLine(count);
+
+
+            foreach (var item in employeesByDepartment)
             {
                 foreach (var employee in item.Value)
                 {
-                    Console.WriteLine($"Id {item.Key}:{employee.Name}:Hourly wage {employee.Wage:C}");
+                    Console.WriteLine($"Department: {item.Key}: {employee.Name}: Hourly wage {employee.Wage:C}");
                 }
             }
 
