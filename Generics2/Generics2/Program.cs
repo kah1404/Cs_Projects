@@ -26,6 +26,16 @@ namespace Generics2
 
             var first = list.First;
             list.AddAfter(first, 5);
+            list.AddBefore(first, 10);
+
+            var node = list.First;
+            while (node != null)
+            {
+                Console.WriteLine(node.Value);
+                node = node.Next;
+            }
+
+            Console.WriteLine("---------");
 
             foreach (var item in list)
             {

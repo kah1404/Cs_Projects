@@ -85,5 +85,37 @@ namespace TestGenerics
             //Du får tilbake det som er enkelt nevner for begge.
             Assert.IsTrue(set1.SetEquals(new []{1,4}));
         }
+
+        [TestMethod]
+        public void LinkedListAddAfter()
+        {
+            var list = new LinkedList<string>();
+            list.AddFirst("Hello");
+            list.AddLast("world");
+            list.AddAfter(list.First, "there");
+
+
+            Assert.AreEqual("there", list.First.Next.Value);
+        }
+        [TestMethod]
+        public void LinkedListRemoveLast()
+        {
+            var list = new LinkedList<string>();
+            list.AddFirst("Hello");
+            list.AddLast("world");
+            list.RemoveLast();
+
+            Assert.AreEqual(list.First, list.Last);
+        }
+        [TestMethod]
+        public void LinkedListRemoveFirst()
+        {
+            var list = new LinkedList<string>();
+            list.AddFirst("Hello");
+            list.AddLast("world");
+            list.RemoveFirst();
+
+            Assert.AreEqual(list.First, list.Last);
+        }
     }
 }
