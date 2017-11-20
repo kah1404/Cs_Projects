@@ -10,7 +10,6 @@ namespace TestingGenerics
         private static void Main(string[] args)
         {
             var testing = new TestGenerics<string>();
-
             try
             {
                 UserInput(testing);
@@ -29,7 +28,7 @@ namespace TestingGenerics
             }
         }
 
-
+        
         private static void UserInput(TestGenerics<string> testing)
         {
             while (true)
