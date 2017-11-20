@@ -21,20 +21,31 @@ namespace Generics2
 
         private static void TestGenerics7()
         {
-            var employeesByName1 = new Dictionary<string, List<Employee>>
+            var employeesByName1 = new Dictionary<int, List<Employee>>
             {
-                { "Kevin", new List<Employee>{new Employee{Name = "Kevin"}}},
-                { "Scott", new List<Employee>{new Employee{Name = "Scott" } }},
-                { "Truls", new List<Employee>{new Employee{Name = "Truls" } }},
+                { 1, new List<Employee>{new Employee{Name = "Kevin", Wage = 250.61f}}},
+                { 2, new List<Employee>{new Employee{Name = "Scott", Wage = 225}}},
+                { 3, new List<Employee>{new Employee{Name = "Truls", Wage = 400}}}
             };
 
-            employeesByName1["Kevin"].Add(new Employee { Name = "Kevin" });
+            employeesByName1[1].Add(new Employee{ Name = "Kevin", Wage = 320});
+            employeesByName1[2].Add(new Employee{ Name = "Scott", Wage = 330});
+
+            var countKeys = employeesByName1.Keys.Count;
+            Console.WriteLine(countKeys);
+
+            var countValues = employeesByName1.Values.Count;
+            Console.WriteLine(countValues);
+
+            var count = employeesByName1.Count;
+            Console.WriteLine(count);
+
 
             foreach (var item in employeesByName1)
             {
                 foreach (var employee in item.Value)
                 {
-                    Console.WriteLine($"{item.Key}:{employee.Name}");
+                    Console.WriteLine($"Id {item.Key}:{employee.Name}:Hourly wage {employee.Wage:C}");
                 }
             }
 

@@ -9,5 +9,7 @@ namespace Generics2
     class Employee
     {
         public string Name { get; set; }
+        public float Wage { get; set; }
+
     }
 }
