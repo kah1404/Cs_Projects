@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
+using System.Media;
 
 namespace DrunkPC
 {
@@ -70,6 +71,27 @@ namespace DrunkPC
             Console.WriteLine("DrunkSoundThread started");
             while (true)
             {
+                if (_random.Next(100) > 90)
+                {
+                    switch (_random.Next(5))
+                    {
+                        case 0:
+                            SystemSounds.Beep.Play();
+                            break;
+                        case 1:
+                            SystemSounds.Asterisk.Play();
+                            break;
+                        case 2:
+                            SystemSounds.Exclamation.Play();
+                            break;
+                        case 3:
+                            SystemSounds.Hand.Play();
+                            break;
+                        case 4:
+                            SystemSounds.Question.Play();
+                            break;
+                    }
+                }
                 Thread.Sleep(500);
             }
         }
@@ -79,7 +101,21 @@ namespace DrunkPC
             Console.WriteLine("DrunkPopupThread started");
             while (true)
             {
-                Thread.Sleep(500);
+                if (_random.Next(100) > 90)
+                {
+                    switch (_random.Next(2))
+                    {
+                        case 0:
+                            MessageBox.Show("Internet explorer has stopped working", "Internet Explorer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        case 1:
+                            MessageBox.Show("Your system is running low on resources", "Microsoft Windows", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                    }
+
+
+                }
+                Thread.Sleep(10000);
             }
         }
 
