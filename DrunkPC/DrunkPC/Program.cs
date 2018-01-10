@@ -7,14 +7,29 @@ namespace DrunkPC
 {
     class Program
     {
-        private static Random _random = new Random();
+        public static Random _random = new Random();
+
+        public static int _startupDelaySeconds = 10;
+        public static int _totalDurationSeconds = 10;
         static void Main(string[] args)
         {
+            if (args.Length >= 2)
+            {
+                _startupDelaySeconds = Convert.ToInt32(args[0]);
+                _totalDurationSeconds = Convert.ToInt32(args[1]);
+            }
             //Create all threads that manipulare all of the inputs and outputs to the system
             var drunkMouseThread = new Thread(DrunkMouseThread);
             var drunkKeyboardThread = new Thread(DrunkKeyboardThread);
             var drunkSoundThread = new Thread(DrunkSoundThread);
             var drunkPopupThread = new Thread(DrunkPopupThread);
+
+            DateTime future = DateTime.Now.AddSeconds(_startupDelaySeconds);
+            Console.WriteLine("Waiting 10 seconds before starting threads");
+            while (future > DateTime.Now)
+            {
+                Thread.Sleep(1000);
+            }
 
             //Start all of the threads
             drunkMouseThread.Start();
@@ -22,8 +37,12 @@ namespace DrunkPC
             drunkSoundThread.Start();
             drunkPopupThread.Start();
 
-            //Wait For user input
-            Console.ReadLine();
+            future = DateTime.Now.AddSeconds(_totalDurationSeconds);
+            while (future > DateTime.Now)
+            {
+                Thread.Sleep(1000);
+            }
+
 
             //Kill the application
             drunkMouseThread.Abort();
@@ -71,7 +90,7 @@ namespace DrunkPC
             Console.WriteLine("DrunkSoundThread started");
             while (true)
             {
-                if (_random.Next(100) > 90)
+                if (_random.Next(100) > 80)
                 {
                     switch (_random.Next(5))
                     {
@@ -101,7 +120,7 @@ namespace DrunkPC
             Console.WriteLine("DrunkPopupThread started");
             while (true)
             {
-                if (_random.Next(100) > 90)
+                if (_random.Next(100) > 30)
                 {
                     switch (_random.Next(2))
                     {
