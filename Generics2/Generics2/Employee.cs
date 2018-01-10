@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Generics2
 {
-    class Employee
+    public class Employee
     {
         public string Name { get; set; }
+        public string Surname { get; set; }
         public float Wage { get; set; }
 
     }

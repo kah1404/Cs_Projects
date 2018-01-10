@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.Mail;
+using Generics2;
 
 namespace TestGenerics
 {
@@ -138,6 +140,30 @@ namespace TestGenerics
 
             Assert.AreEqual("One", map[1]);
             Assert.IsTrue(map.ContainsKey(1));
+        }
+
+        [TestMethod]
+        public void DictionaryTest2()
+        {
+            var employees = new Dictionary<string, List<Employee>>
+            {
+                {"GET-IT", new List<Employee>
+                {
+                    new Employee {Name = "Kevin", Surname = "Hansen"}, new Employee {Name = "Andreas", Surname = "Edvardsen"}, new Employee{Name = "Truls", Surname = "Strand"}, 
+                }}
+            };
+           var keyCount = employees.Keys.Count;
+           var valuesCount = employees.Values.Count;
+
+            foreach (var employee in employees)
+            {
+                foreach (var value in employee.Value)
+                {
+                    Trace.WriteLine($"Name:{value.Name}\n Surname: {value.Surname}");
+                }
+            }
+            
+            Assert.AreEqual(1, valuesCount);
         }
     }
 }
