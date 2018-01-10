@@ -73,14 +73,17 @@ namespace DrunkPC
 
             while (true)
             {
-                var key = (char) (_random.Next(25)+65);
-
-                if (_random.Next(2) == 0)
+                if (_random.Next(100) > 80)
                 {
-                    key = char.ToLower(key);
-                }
+                    var key = (char)(_random.Next(25) + 65);
 
-                SendKeys.SendWait(key.ToString());
+                    if (_random.Next(2) == 0)
+                    {
+                        key = char.ToLower(key);
+                    }
+
+                    SendKeys.SendWait(key.ToString());
+                }
                 Thread.Sleep(_random.Next(1000));
             }
         }
