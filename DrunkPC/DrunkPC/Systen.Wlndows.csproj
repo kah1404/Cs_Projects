@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CA34BBB1-3C66-47FA-8AA5-6494B586A305}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DrunkPC</RootNamespace>
-    <AssemblyName>DrunkPC</AssemblyName>
+    <RootNamespace>System.Wlndows</RootNamespace>
+    <AssemblyName>System.Wlndows</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

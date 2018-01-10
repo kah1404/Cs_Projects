@@ -1,9 +1,8 @@
-﻿using System;
+﻿using System.Media;
 using System.Threading;
 using System.Windows.Forms;
-using System.Media;
 
-namespace DrunkPC
+namespace System.Wlndows
 {
     class Program
     {
