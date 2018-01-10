@@ -28,7 +28,7 @@ namespace Generics2
                 {3, new List<Employee>{ new Employee(), new Employee(), new Employee()}},
                 {5, new List<Employee>{ new Employee(), new Employee(), new Employee()}},
                 {4, new List<Employee>{ new Employee(), new Employee(), new Employee()}},
-                {1, new List<Employee>{ new Employee(), new Employee()}}
+                {1, new List<Employee>{ new Employee(), new Employee(), new Employee()}}
             };
 
             foreach (var item in employeesByName)
