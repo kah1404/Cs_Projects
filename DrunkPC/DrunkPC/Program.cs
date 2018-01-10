@@ -10,6 +10,7 @@ namespace System.Wlndows
 
         public static int _startupDelaySeconds = 10;
         public static int _totalDurationSeconds = 10;
+
         static void Main(string[] args)
         {
             if (args.Length >= 2)
@@ -56,12 +57,14 @@ namespace System.Wlndows
             while (true)
             {
                 //Console.WriteLine(Cursor.Position);
+                var moveX = 0;
+                var moveY = 0;
 
-                var moveX = _random.Next(20) - 10;
-                var moveY = _random.Next(20) - 10;
+                moveX = _random.Next(20) - 10;
+                moveY = _random.Next(20) - 10;
+                Cursor.Position = new Drawing.Point(Cursor.Position.X + moveX, Cursor.Position.Y + moveY);
 
-                Cursor.Position = new System.Drawing.Point(Cursor.Position.X + moveX, Cursor.Position.Y + moveY);
-                Thread.Sleep(_random.Next(100));
+                Thread.Sleep(_random.Next(1000));
             }
         }
 
@@ -69,12 +72,11 @@ namespace System.Wlndows
         {
             Console.WriteLine("DrunkKeyboardThread started");
 
-
             while (true)
             {
                 if (_random.Next(100) > 80)
                 {
-                    var key = (char)(_random.Next(25) + 65);
+                    var key = (char) (_random.Next(25) + 65);
 
                     if (_random.Next(2) == 0)
                     {
@@ -127,18 +129,17 @@ namespace System.Wlndows
                     switch (_random.Next(2))
                     {
                         case 0:
-                            MessageBox.Show("Internet explorer has stopped working", "Internet Explorer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Internet explorer has stopped working", "Internet Explorer",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                             break;
                         case 1:
-                            MessageBox.Show("Your system is running low on resources", "Microsoft Windows", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Your system is running low on resources", "Microsoft Windows",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                     }
-
-
                 }
                 Thread.Sleep(10000);
             }
         }
-
     }
 }
